@@ -17,11 +17,10 @@ int existsFile(char* filename) {
 	}
 	return 0;
 }
-Library* newLibrary(char *filename){
+
+int countElements(char *filename){
 	FILE* file;
 	int buffer;
-	Library* library = (Library*) malloc(sizeof(Library));
-
 	file = fopen(filename,"r");
 	int counter=0;
     while (!feof(file)){
@@ -29,23 +28,24 @@ Library* newLibrary(char *filename){
     	counter++;
     }
     fclose(file);
-   	
-
-   	//Guardando los datos en biblioteca de datos
-    library->data = (int*) malloc(sizeof(int)*counter);
-    library->length = counter;
-    
-    
-    file = fopen(filename,"r");
-    counter=0;
+    return counter;
+}
+Library* newLibrary(char *filename){
+	FILE* file = fopen(filename,"r");
+	int buffer;
+	int counter=0;
+	int elements = countElements(filename);
+	Library* library = (Library*) malloc(sizeof(Library));
+	//Guardando los datos en biblioteca de datos
+    library->data = (int*) malloc(sizeof(int)*elements);
+    library->length = elements;
+       
     while (!feof(file)){
-
     	fscanf(file,"%d\n",&buffer);
     	library->data[counter] = buffer;
     	counter++;
     }
     fclose(file);
-
     return library;
     
 }
