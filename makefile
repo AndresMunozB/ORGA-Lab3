@@ -1,2 +1,2 @@
 all:
-	gcc -o main main.c funciones.c list.c
+	gcc -o main main.c funciones.c
