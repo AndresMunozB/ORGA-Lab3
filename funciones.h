@@ -22,4 +22,11 @@ int isPolitics(char* cadena);
 int validateData(int argc, char** argv);
 void statsFile(Cache* cache,char* fileName);
 void cacheFile(Cache* cache,char*fileName);
+int isComplete(Cache* cache, int group);
+int indexBlock(Cache* cache, int group, int dato);
+void MRU(Cache* cache, int dato);
+void interactionBlockLRU(Cache* cache, int group,int block);
+int indexBlockLRU(Cache* cache, int group);
+void LRU(Cache* cache, int dato);
+void addPrefix(char* str,char**argv);
 #endif

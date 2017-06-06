@@ -4,13 +4,15 @@
 typedef	struct block
 {
 	int* words;
+	int lru;
 
 }Block;
 
 typedef struct group
 {
 	Block* blocks;
-	int fifo;
+	int counter;
+	int mru;
 
 }Group;
 
