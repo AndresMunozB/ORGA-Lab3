@@ -51,7 +51,7 @@ int isPow2(int value)
 int isNumber(char* cadena)
 {
 	int i;
-	for (i=0;i<strlen(cadena);i++){
+	for (i=0;i<(int)strlen(cadena);i++){
 		if (!(cadena[i]>= 48 && cadena[i]<=57)){
 			return 0;
 		}

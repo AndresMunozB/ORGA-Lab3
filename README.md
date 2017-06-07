@@ -1,11 +1,9 @@
 # ORGA-Lab3
 Caché
 
+SISTEMA OPERATIVO: WINDOWS
 Para compilar en windows:
 	mingw32-make
-Para compilar en linux:
-	make
 Para ejecutar en windows:
-	main
-Para ejecutar en linux:
-	./main
+	main "politica" "vias" "palabras" "bloques"
+
